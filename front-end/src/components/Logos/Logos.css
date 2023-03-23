@@ -1,0 +1,17 @@
+.containerLogos{
+    display: flex;
+    justify-content: space-around;
+    width: 10vw;
+    height: 2vh;
+    margin-right: 30px;
+}
+@media (max-width: 768px) {
+    .containerLogos{
+        width: 20vw;
+    }
+}
+@media (max-width: 480px) {
+    .containerLogos{
+        width: 28vw;
+    }
+}

@@ -1,0 +1,91 @@
+.navBar {
+    width: 100%;
+    height: 180px;
+    background-color: #191B1D;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.formNavbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 76vw;
+}
+.svgNavbar{
+    width: 2vw;
+}
+.selectNavBar {
+    width: 400px;
+    height: 40px;
+    color: #7F7F7F;
+    border-radius: 5px;
+    margin: 6px;
+}
+.formNavbar .rmdp-top-class{
+    width: 30vw;
+}
+.buttonNavBar {
+    background-color: #F0572D;
+    width: 206px;
+    height: 45px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+.buttonNavBar:hover {
+    transform: translateY(-3px);
+    background-color: rgb(243, 56, 56);
+    transform: scaleX(0.93) scaleY(0.93);
+}
+
+.rmdp-input{
+    width: 390px;
+    font-size: 15px;
+    color: #755d55;
+    /* Este es el datePicker */
+}
+@media (max-width: 768px) {
+    .navBar{
+        width: 101vw;
+    }
+    .formNavbar{
+        width: 90vw;
+    }
+    .buttonNavBar {
+        width: 23vw;
+    }
+    .selectNavBar {
+        width: 30vw;
+    }
+    .rmdp-input{
+        width: 30vw;
+    }
+  }
+  @media (max-width: 480px) {
+    .selectNavBar {
+        width: 140vw;
+    }
+    .rmdp-input{
+        width: 148vw;
+    }
+    .navBar{
+        display: flex;
+        width: 153vw;
+        height: 30vh;
+    }
+    .formNavbar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .h1Navbar{
+        font-size: 28px;
+    }
+    .buttonNavBar{
+        margin-left: 3px;
+        margin-top: 13px;
+        width: 151vw;
+    }
+  }

@@ -1,0 +1,79 @@
+.containerForm {
+    height: 75vh;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+  }
+  .msgLoginBookingError svg {
+    width: 31px;
+    height: 31px;
+    margin-right: 14px;
+  }
+  
+  .formSignup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 0;
+    margin-bottom: 35px;
+  }
+   .containerInputSignup {
+    display: flex;
+    flex-direction: row;
+    width: 450px;
+    gap: 50px;
+  }
+  .msgErrorForm {
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    color: rgb(255, 0, 0);
+    margin-top: -10px;
+    width: 430px;
+  }
+  .submitButton {
+    width: 100%;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.12));
+    margin-top: 30px;
+  }
+  
+  .linkContainer {
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 7px;
+    text-align: center;
+    color: black;
+  }
+  
+  .linkAction {
+    color:#ee2a2a;
+    text-decoration: none;
+  }
+  
+  .msgErrorInvalidForm {
+    width: 448px;
+  }
+  .containerBtnSignup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }  
+  .submitButton {
+    width: 206px;
+    margin: auto;
+    margin-top: 51px;
+ }  
+  @media (min-width: 768px) {
+    .msgLoginBookingError {
+      width: 346px;
+      padding: 22.5px 34px 22.5px 47px;
+    }
+    .msgErrorInvalidForm {
+      width: 346px;
+    }
+    .submitButton {
+      margin-top: 20px; /* 55px*/
+    }
+  }
+  
+  

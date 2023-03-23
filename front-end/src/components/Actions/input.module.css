@@ -1,0 +1,80 @@
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    height: 81px;
+  }
+  .useLabel {
+    width: fit-content;
+    margin-bottom: 8px;
+  }
+  .otherLabel{
+    font-size: 16px;
+    font-weight: 900;
+    margin-left: 36px;
+    margin-bottom: 3px;
+  }
+  .inputChildren {
+    position: relative;
+  }  
+  .useInput {
+    padding: 0 18px;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+  }
+  .otherInput{
+    font-weight: bold;
+    width: 25vw;
+    padding: 0 18px;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    margin-top: 3.5px;
+    margin-left: 35px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+  }
+   .iconVisibility {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 24px;
+    height: 24px;
+  }
+   .msgError {
+    display: inline-block;
+    text-align: end;
+    color: red;
+    padding: 0 0.5rem;
+  }
+  input:focus {
+    outline: none;
+    background-color: white;
+  } 
+  .input:read-only {
+    background: rgb(223 228 234 / 40%);
+    color: rgb(84 87 118 / 75%);
+  } 
+  .inputError {
+    border: 1px solid red;
+    background: #ffe1e1;
+  }
+  .inputError:focus {
+    border: none;
+  }
+  @media (min-width: 768px) {
+    .inputContainer {
+      width: 346px;
+    }
+  }
+  @media (max-width: 480px) {
+    .inputContainer {
+      width: 290px;
+    }
+  }
+  
+.inputContainer {
+      width: 448px;
+    }

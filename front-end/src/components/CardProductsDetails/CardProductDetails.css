@@ -1,0 +1,308 @@
+
+.containerProductName{
+    background-color: rgb(88, 88, 88);
+    color: white;
+    padding: 10px 28px 10px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flechaProduct{
+    width: 3vw;
+    height: 5vh;
+}
+.divProductDetails{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eeeef1;
+    padding: 10px 30px 10px 25px;
+}
+.divProductDetails_City{
+    display: flex;
+    font-weight:700;
+}
+.svgDetails{
+    height: 4vh;
+ }
+.divProductDetails_Star{
+   display: flex;
+   justify-content: space-between;
+   align-items: start;
+   width: 9vw;
+}
+.stars{
+    width: 1vw; 
+}
+.svgDetailProduct{
+    padding-left: 20px;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+}
+.spanDetails{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+.divImagesDetails{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.imgPrincipalDetails{
+    padding: 10px;
+    width: 40vw;
+    aspect-ratio: 1.48/1;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.imgColumnas{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    justify-self: center;
+    width: 55vw;
+}
+.imgSecundariaDetails{
+    width: 27vw;
+    /* height: 27vh; */
+    aspect-ratio: 2.055/1;
+    object-fit: cover;
+    border-radius: 15px;
+    padding: 5px;
+}
+.linkDetailCarousel{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    border: none;
+    font-weight: bold;
+    word-spacing: -1px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 15px;
+    top:102vh;
+    right: 3vw;
+    width: 10vw;
+}
+.responsiveProductImages{
+    display: none;
+}
+.slider{
+    position: absolute;
+    top: 40vh;
+}
+.svgCloseSlider{
+    position: absolute;
+    bottom: 73vh;
+    left: 89vw;
+    background-color: rgb(255, 255, 255);
+    z-index: 5;
+    border-radius: 15px;
+}
+.productDescription{
+    display:flex;
+    flex-direction:column;
+    height:18vh;
+    justify-content:space-between;
+    font-weight:600;
+    width: 95vw;
+}
+hr{
+    border-color: #F0572D;
+}
+.productServices{
+    margin: 30px 0px 0px 20px;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    justify-items: space-between;
+    height: 15vh;
+    font-weight: 600;
+}
+.svgProductServices{
+    height: 3vh;
+    fill: #0059ff;
+}
+.containerProductTerms{
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    margin:30px 0px 0px 20px;
+}
+.productTerms{
+    width: 25vw;
+}
+.containerProductCalendar{
+    background-color: #eeeef1;
+    padding-bottom: 40px;
+}
+.productCalendar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.productCalendarMobile{
+    display: none;
+}
+.h2Calendar{
+    font-size: 2rem;
+    font-weight: bolder;
+    margin:30px 0px 30px 20px;
+    padding-top:15px;
+}
+
+.rmdp-calendar{
+    width: 60vw;
+}
+.rmdp-day-picker {
+    display: flex;
+    justify-content: space-around;
+}
+.rmdp-week-day{
+    color:#ff501f;
+    font-weight: 900;
+}
+.rmdp-week, .rmdp-ym{
+    width: 26vw;
+}
+.rmdp-day span{
+    font-weight: 600;
+}
+.rmdp-header-values{
+    font-weight: 600;
+}
+.productReserve{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    height: 14vh;
+    width: 31vw;
+    padding: 15px;
+    box-shadow: 0px 8px 8px 0px rgb(0 0 0 / 25%);
+}
+.btnProduct{
+    background-color: #F0572D;
+    color: white;
+    width: 30vw;
+}
+@media (max-width: 768px) {
+    .flechaProduct{
+        width: 8vw;
+    }
+    .divProductDetails_Star{
+        width: 16vw;
+     }
+     .svgDetails{
+        height: 3vh;
+        margin-bottom: 20px;
+     }
+     .stars{
+        width: 2vw;
+     }
+     .divImagesDetails{
+        display: none;
+     }
+     .responsiveProductImages{
+        display: block;
+     }
+     .productServices{
+        grid-template-columns: 2fr 2fr ;
+        justify-items: space-between;
+        height: 25vh;
+    }
+    .containerProductTerms{
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        margin: 30px 0px 0px 20px;
+        justify-items:space-between;
+        height: 40vh;
+    }
+    .productTerms{
+        width: 47vw;
+        height: 13vh;
+    }
+    .h2Calendar{
+        margin:0px 0px 30px 20px;
+    }
+    .productCalendar{
+        display: flex;
+        flex-direction: column;
+    }
+    .productReserve{
+        flex-direction: row;
+        width: 95vw;
+        height: 2vh;
+        background-color:#eeeef1;
+        box-shadow: none;
+        margin-top: 20px;
+    }
+    .btnProduct{
+        width: 35vw;
+    }
+    .rmdp-calendar{
+        width: 90vw;
+    }
+    .rmdp-week, .rmdp-ym{
+        width: 40vw;
+    }
+  }
+  @media (max-width: 480px) {
+    .divProductDetails_City{
+        width: 110vw;
+    }
+    .divProductDetails_Star{
+        width: 29vw;
+        font-weight: 700;
+     }
+     .stars{
+        width: 3vw;
+     }
+     
+     .containerProductDetails{
+        width: 165vw;
+     }
+     .productDescription{
+        width: 150vw;
+        gap: 10px;
+        padding-bottom: 30px;
+     }
+     .containerProductTerms{
+        display:flex ;
+        height: 40vh;
+        width: 152vw;
+     }
+     .productTerms{
+        height: 7vh;
+    }
+    .productCalendar{
+        display: none;
+    }
+    .productCalendarMobile{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .rmdp-calendar{
+        
+        width: 150vw;
+    }
+    .rmdp-week, .rmdp-ym{
+        width: 110vw;
+        height: 5vh;
+    }
+  
+    .productReserve{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 6vh;
+        gap: 10px;
+        width: 120vw;
+    }
+    .btnProduct{
+        width: 110vw;
+    }
+  }

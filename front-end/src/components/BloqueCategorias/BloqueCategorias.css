@@ -1,0 +1,35 @@
+.divCategorias{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 98vw;
+    
+}
+.containerCategorias{
+    display: flex;
+    justify-content: center;
+    
+}
+@media (max-width: 768px) {
+    .containerCategorias{
+        justify-content: end;
+        height: 54vh;
+    }
+    .divCategorias{
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+    }
+  }
+  @media (max-width: 480px) {
+    .containerCategorias{
+        width: 158vw;
+        display: flex;
+        justify-content: center;
+        height: 150vh;
+    }
+    .divCategorias{
+        display: flex;
+        flex-direction: column;
+        
+    }
+  }
