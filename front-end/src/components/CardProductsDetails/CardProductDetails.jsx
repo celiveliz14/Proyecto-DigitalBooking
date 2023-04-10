@@ -8,6 +8,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import Stars from "./Stars/Stars";
 import { Calendar } from "react-multi-date-picker";
 import { useGlobalStates } from "../../context/GlobalContext";
+import endpoint from '../../utils/endpoint.json';
 
 const CardProductDetails = () => {
   const [slider, setSlider] = useState(false);
@@ -22,7 +23,7 @@ const CardProductDetails = () => {
   const [prod, setProd] = useState()
 
   function redirect(){
-    if(data.token==''){
+    if(!data.valid){//data.token==''
         setValidateLogin(true)
         navigate('/login')
     }else{
@@ -40,7 +41,7 @@ const CardProductDetails = () => {
   
 
   useEffect(() => {
-    axios.get(`http://3.137.136.152:8080/productos/${id}`)
+    axios.get(`${endpoint.url}/productos/${id}`)
     .then(res=> setProd(res.data))
   }, [])
 
@@ -174,28 +175,7 @@ const CardProductDetails = () => {
         </h2>
         <hr />
         <div className="productServices">
-          <p style={{color:'black'}}>
-            <span><img style={{height:"30px",width:"30px"}} src={prod?.caracteristicas[0].icono}></img></span>
-            Wifi
-            </p>
-          <p style={{color:'black'}}>
-          <span><img style={{height:"30px",width:"30px"}} src={prod?.caracteristicas[1].icono}></img></span>
-            Pileata Climatizada</p>
-          <p style={{color:'black'}}>
-          <span><img style={{height:"25px",width:"40px"}} src={prod?.caracteristicas[2].icono}></img></span>
-            Estacionamieto </p>
-          <p style={{color:'black'}}>
-          <span><img style={{height:"25px",width:"40px"}} src={prod?.caracteristicas[3].icono}></img></span>
-            Apto Mascotas</p>
-          <p style={{color:'black'}}>
-          <span><img style={{height:"25px",width:"40px"}} src={prod?.caracteristicas[4].icono}></img></span>
-            Aire acondicionado</p>
-          <p style={{color:'black'}}>
-          <span><img style={{height:"25px",width:"40px"}} src={prod?.caracteristicas[5].icono}></img></span>
-            Television HD</p>
-          <p style={{color:'black'}}>
-          <span><img style={{height:"25px",width:"40px"}} src={prod?.caracteristicas[6].icono}></img></span>
-            </p>
+        {prod?.caracteristicas?.map(c => (<p style={{color:'black'}}><span><img style={{height:"30px",width:"30px"}} src={c.icono}></img></span>{c.nombre}</p>))}
         </div>
       </div>
       <div style={{opacity: slider ? '0.3' : '' }}>

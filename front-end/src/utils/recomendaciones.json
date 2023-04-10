@@ -1,0 +1,68 @@
+
+[{
+   "id=":"1",
+   "titulo":"Hotel 1",
+   "descripcion":"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires. más...",
+   "url":"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/habitacion-hotel-revolve2-1546271048.jpeg",
+   "ubicacion":"A 940 m del centro",
+   "categoria":"hoteles "
+
+},
+{
+   "id=":"2",
+   "titulo":"Hotel 2",
+   "descripcion":"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires. más...",
+   "url":"https://media.ambito.com/p/d5069798a379128c4d48dc586dede974/adjuntos/239/imagenes/036/681/0036681204/2jpg.jpg",
+   "ubicacion":"A 940 m del centro",
+   "categoria":"hoteles"
+ },
+ {
+   "id=":"3",
+   "titulo":"hostel 3",
+   "descripcion":"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires. más...",
+   "url":"https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partnerimages/61/37/613753900.jpeg",
+   "ubicacion":"A 940 m del centro",
+   "categoria":"hostels"
+ },
+ {
+   "id=":"4",
+   "titulo":"hostel 4",
+   "descripcion":"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires. más...",
+   "url":"https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partnerimages/33/18/331828796.jpeg",
+   "ubicacion":"A 940 m del centro",
+   "categoria":"hostels"
+ },
+ {
+   "id=":"5",
+   "titulo":"departamento 5",
+   "descripcion":"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires. más...",
+   "url":"https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partnerimages/73/21/732178900.jpeg",
+   "ubicacion":"A 940 m del centro",
+   "categoria":"departamentos"
+ },
+ {
+   "id=":"6",
+   "titulo":"departamento 6",
+   "descripcion":"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires. más...",
+   "url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYlZoBqCVJN32weDAcB8zJaAwb-TniEmQ3-Q&usqp=CAU",
+   "ubicacion":"A 940 m del centro",
+   "categoria":"departamentos"
+ },
+ {
+   "id=":"7",
+   "titulo":"b&b 7",
+   "descripcion":"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires. más...",
+   "url":"https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partnerimages/47/97/479710082.jpeg",
+   "ubicacion":"A 940 m del centro",
+   "categoria":"b&b"
+ },
+ {
+   "id=":"8",
+   "titulo":"b&b 8",
+   "descripcion":"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires. más...",
+   "url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7zsstmI4e5oOIRY4PYNOFz-a8uDu5Eyn83Q&usqp=CAU",
+   "ubicacion":"A 940 m del centro",
+   "categoria":"b&b"
+ }
+]
+

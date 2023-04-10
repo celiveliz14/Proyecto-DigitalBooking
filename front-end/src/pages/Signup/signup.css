@@ -63,6 +63,12 @@
     margin: auto;
     margin-top: 51px;
  }  
+ .btnSignup:hover{
+    transform: translateY(-3px);
+    background-color: rgb(243, 56, 56);
+    transform: scaleX(0.93) scaleY(0.93);
+    color: white;
+ }
   @media (min-width: 768px) {
     .msgLoginBookingError {
       width: 346px;

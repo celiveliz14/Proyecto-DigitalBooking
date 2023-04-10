@@ -15,3 +15,7 @@
         width: 28vw;
     }
 }
+.miniLogo:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}

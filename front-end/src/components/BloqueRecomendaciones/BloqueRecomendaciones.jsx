@@ -4,15 +4,16 @@ import './BloqueRecomendaciones.css'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useGlobalStates } from '../../context/GlobalContext'
-
+import endpoint from '../../utils/endpoint.json'
 
 const BloqueRecomendaciones = () => {
 
   const [recomendacion, setRecomendacion] = useState([])
-  const {pressCategory,category,cities,pressBtn}=useGlobalStates()
+  const {pressCategory,category,cities,pressBtn,fechaInicio, fechaFinal}=useGlobalStates()
   const [filterRecomend,setFilterRecomend]=useState([])
   const [filterRecomendation,setFilterRecomendation]=useState([])
   const [valid,setValid]=useState(false);
+
 
   useEffect(() =>  {
     loadRecomendaciones()
@@ -24,6 +25,9 @@ const BloqueRecomendaciones = () => {
 
   useEffect(()=>{
     if(cities !== null){
+      // const data = axios.get(`${endpoint.url}/productos/dateCiudad?fechaInicio=${fechaInicio}&fechaFinal=${fechaFinal}&ciudadId=${cities.id}`)
+      // .then(data => setFilterRecomend(data.data))
+      // console.log(data);
       setFilterRecomendation(recomendacion.filter((rec)=>rec.ciudad.nombre_ciudad==cities.nombre_ciudad))
     }
     setValid(true)
@@ -34,7 +38,7 @@ const BloqueRecomendaciones = () => {
   },[pressCategory])
 
   const loadRecomendaciones = async () => {
-      const data = await axios.get("http://3.137.136.152:8080/productos/random")
+      const data = await axios.get(`${endpoint.url}/productos/random`)
       setRecomendacion(data.data)
   }
 

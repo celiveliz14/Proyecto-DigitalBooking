@@ -1,22 +1,25 @@
 import React from 'react'
 import CardBloqueCategorias from '../CardBloqueCategorias/CardBloqueCategorias'
-import categorias from '../../categorias.json'
 import './BloqueCategorias.css'
 import axios from 'axios'
 import { useEffect,useState } from 'react'
-
+import endpoint from '../../utils/endpoint.json'
+import { useGlobalStates } from '../../context/GlobalContext'
 
 const BloqueCategorias = () => {
 
     const [categoria, setCategoria] = useState([])
+    const {categorias, setCategorias} = useGlobalStates()
+    
 
     useEffect(() =>  {
         loadCategorias()
     }, [])
 
     const loadCategorias = async () => {
-        const data = await axios.get("http://3.137.136.152:8080/categorias")
+        const data = await axios.get(`${endpoint.url}/categorias`)
         setCategoria(data.data)
+        setCategorias(data.data)
     }
     
     return (

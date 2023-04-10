@@ -7,24 +7,21 @@ import { Calendar } from "react-multi-date-picker";
 import Dropdown from "../../components/Navbar/Dropdown/Dropdown";
 import Stars from "../../components/CardProductsDetails/Stars/Stars";
 import axios from "axios";
-import Input from "../../components/Actions/useInput";
 import { useGlobalStates } from "../../context/GlobalContext";
-import timesInput from '../../times.json'
+import timesInput from '../../utils/times.json';
+import endpoint from '../../utils/endpoint.json';
+import { useNavigate } from "react-router-dom";
 
 const Booking = () => {
   const [value, setValue] = useState([]);
   const [product,setProduct]=useState();
-  const [useInput,setUseInput]=useState({ value: "", valid: null });
-  const {time, data}=useGlobalStates()
-  const [error,setError]=useState(false)
+  const {time, data, succes, setSucces}=useGlobalStates();
+  const [error,setError]=useState(false);
   const weekDays = ["D", "L", "M", "M", "J", "V", "S"];
   const months = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre",];
+  const navigate = useNavigate()
 
-  const {id}=useParams()
-
-  const regularExpressions = {
-    nameAndLastName: /^[a-zA-ZÀ-ÿ\s]{4,40}$/,
-  };
+  const {id}=useParams();
 
   function handleChange(value) {
     setValue(value);
@@ -41,27 +38,28 @@ const Booking = () => {
       }
     }
     console.log(reserva);
-    fetch("http://3.137.136.152:8080/reservas", {
+    
+    if(value[0] && value[1]){
+      fetch(`${endpoint.url}/reservas`, {
       method: "POST",
       body: JSON.stringify(reserva),
       headers: {
         'Content-type': 'application/json',
-        'Cookie': `jwt=${data.token}`
+        'Authotization': `Bearer ${data.token}`
       }})
       .then((response) =>  response.text())
       .then((res) => {
-        console.log(res);
+        setSucces("booking")
+        navigate('/booking/success')
       })
       .catch((err) => {
         console.log(err);
         setError(true);
       })
-
-    if(value[0] && value[1]){
     }  
   }
   useEffect(() => {
-    axios.get(`http://3.137.136.152:8080/productos/${id}`)
+    axios.get(`${endpoint.url}/productos/${id}`)
     .then(res=> setProduct(res.data))
   }, [])
   return (
@@ -101,16 +99,7 @@ const Booking = () => {
                   <input placeholder={data.email} className="bookingInput" type="email" disabled/>
                 </div>
                 <div className="containerBookingInput">
-                  <Input
-                state={useInput}
-                changeState={setUseInput}
-                label="Ciudad"
-                type="text"
-                id="name"
-                name="text"
-                error="Debe tener 4 caracteres como mínimo"
-                regex={regularExpressions.nameAndLastName}
-              />
+
                 </div>
               { error && (<p className="errorBooking">Lamentablemente la reserva no ha podido realizarse. Por favor, intente más tarde</p>)}
               </form>

@@ -1,0 +1,21 @@
+.centro{
+    text-align: center;
+}
+.container2{
+    gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(
+            150px,
+            1fr
+        )
+    )
+
+}
+
+@media (min-width: 768px) {
+  .botonVacio {
+    padding: 24px;
+  }
+}

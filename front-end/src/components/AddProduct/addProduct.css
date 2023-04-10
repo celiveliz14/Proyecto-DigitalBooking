@@ -1,0 +1,170 @@
+.formAdministrationContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formAdministration{
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    border-radius: 7px;
+    width: 90vw;
+}
+.containerAdministration{
+    padding-top: 20px;
+    padding-left: 10px;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    align-items: center;
+}
+.dropdownAdministration{
+    margin-top: -4px;
+}
+.administration{
+    display: flex;
+    flex-direction: column;
+    padding-left: 45px;
+    margin-top: 10px;
+}
+.tAreaAdministration{
+    margin-top: 4px;
+    border: none;
+    width: 83vw;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 7px;
+}
+.tAreaAdministration:focus{
+    outline: none;
+    font-size: 20px;
+}
+.administrationInput{
+    font-weight: bold;
+    width: 25vw;
+    padding: 0 18px;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    margin-top: 6px;
+    margin-bottom: 5px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+}
+.containerAdministrationTerms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.administrationTerms{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    width: 83vw;
+    border-radius: 7px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+}
+.tAdministrationTerms{
+    width: 26vw;
+    margin-top: 10px;
+    border: none;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 7px;
+}
+.tAdministrationTerms:focus{
+    outline: none;
+    font-size: 20px;
+}
+.containerImgAdministration{
+    display: flex;
+    background-color: #eeeef1 ;
+    border-radius: 7px;
+    align-items: center;
+}
+.imgAdministration{
+    display: flex;
+    align-items: center;
+}
+.containerBtnAdministration{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom:15px ;
+}
+.btnAdministration{
+    background-color: #F0572D;
+    color: white;
+    width: 30vw;
+}
+.btnAdministration:hover{
+    background-color: rgb(243, 56, 56);
+    transition:all 1s;
+    width: 40vw;
+}
+.h3Admin{
+    padding-top:30px;
+    padding-bottom:10px;
+    padding-left:30px;
+}
+.containerErrorImg{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.errorImg{
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    font-size: 20px;
+}
+@media (max-width: 768px) {
+    .tAreaAdministration{
+        width: 78.7vw;
+    }
+    .administrationTerms{
+        flex-direction: column;
+        justify-content: none;
+        width: 80vw;
+    }
+    .tAdministrationTerms{
+        width: 80vw;
+    }
+    .marTerms{
+        margin-top: 20px;
+    }
+  }
+  @media (max-width: 480px) {
+    .containerHeaderAdmin{
+        width: 152vw;
+    }
+    .containerAdministration{
+        display: flex;
+        flex-direction: column;
+    }
+    .formAdministrationContainer{
+        width: 165vw;
+    }
+    .formAdministration{
+        width: 140vw;
+    }
+    .administration{
+        padding-left: 29px;
+    }
+    .tAreaAdministration{
+        width: 127vw;
+        height: 40vh;
+    }
+    .dropdownAdministration{
+      margin-right: 7px;
+      margin-top: 10px;
+    }
+    .administrationTerms{
+        width: 130vw;
+        box-shadow: none;
+    }
+    .tAdministrationTerms{
+        width: 130vw;
+        
+    }
+    .h3Admin{
+        padding-left: 10px;
+    }
+  }

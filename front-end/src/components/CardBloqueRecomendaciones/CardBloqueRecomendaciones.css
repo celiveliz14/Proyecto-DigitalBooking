@@ -44,7 +44,9 @@
     cursor: pointer;
 }
 .buttonNav:hover{
-    background-color: rgb(243, 56, 56);
+    background-color: #000;
+    opacity: 0.7;
+    transition-delay:0.03s;
 }
 @media (max-width: 768px) {
     .bloqueRecomendaciones{

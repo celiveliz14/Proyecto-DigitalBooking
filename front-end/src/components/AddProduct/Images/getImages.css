@@ -1,0 +1,35 @@
+.containerImgAdmin{
+    padding: 30px 25px 0px 25px;
+}
+.containerImgAdministration{
+    display: flex;
+    background-color: #eeeef1 ;
+    border-radius: 7px;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.imgAdministration{
+    display: flex;
+    align-items: center;
+}
+.svgImagesAdmin{
+    width: 44px;
+    height: 65px;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+@media (max-width: 480px) {
+    .svgImagesAdmin{
+        margin-left: 0px;
+    }
+    .imgAdministration{
+        display: flex;
+        flex-direction: column;
+    }
+    .containerImgAdmin{
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+}

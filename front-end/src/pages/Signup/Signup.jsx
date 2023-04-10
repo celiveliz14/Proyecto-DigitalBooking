@@ -1,8 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import Input from '../../components/Actions/useInput';
 import './signup.css';
-import { Await, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
+import endpoint from '../../utils/endpoint.json';
+import Swal from "sweetalert2";
+
 
 const Signup = () => {
   const [name, setName] = useState({ value: '', valid: null });
@@ -10,16 +13,16 @@ const Signup = () => {
   const [email, setEmail] = useState({ value: '', valid: null });
   const [password, setPassword] = useState({ value: '', valid: null });
   const [password2, setPassword2] = useState({ value: '', valid: null });
-
   const [isValid, setisValid] = useState(null);
   const [msgError, setMsgError] = useState('');
-  const [error,setError]=useState(false)
+  const [error,setError]=useState(false);
+
 
   const regularExpressions = {
     nameAndLastName: /^[a-zA-ZÀ-ÿ\s]{4,40}$/, 
     email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     password: /^.{7,30}$/, // 
-  };
+  }
   
   const handleSubmit = async (e) => {
       e.preventDefault()
@@ -33,17 +36,16 @@ const Signup = () => {
       }
       if(email.valid == 'true' && password.valid == 'true'
       && lastName.valid == 'true' && name.valid == 'true' && password2.valid == 'true'){
-          fetch("http://3.137.136.152:8080/api/v1/auth/register", {
+          fetch(`${endpoint.url}/api/v1/auth/register`, {
             method: "POST",
             body: JSON.stringify(obj),
             headers: {
               "Content-type": "application/json; charset=UTF-8"
             }})
-            .then((response) =>  response.json())
+            .then((response) =>  response.text())
             .then((res) => {
-              console.log(res);
-              alert(name.value+' '+lastName.value+',tu registro con el correo '+email.value+' ha sido completado con exito ')
-              })
+              mostrarAlerta() 
+            })
             .catch((err) => {
               console.log(err);
               setError(true)
@@ -110,6 +112,14 @@ const Signup = () => {
     }
   }
 
+  const mostrarAlerta = () => {
+    Swal.fire({
+        title:"Usario Registrado exitosamente",
+        text:"Muchas gracias por elegirnos!",
+        icon:'success',
+        timer:'25000',
+    })}
+
   return (
     <>
     <Header onChange={'signup'}/>
@@ -129,7 +139,7 @@ const Signup = () => {
                 type="text"
                 id="name"
                 name="name"
-                error="Sólo se permiten letras"
+                error="Sólo se permiten letras y mínimo cuatro carácteres"
                 regex={regularExpressions.nameAndLastName}
               />
               <Input
@@ -139,7 +149,7 @@ const Signup = () => {
                 type="text"
                 id="lastName"
                 name="lastName"
-                error="Sólo se permiten letras"
+                error="Sólo se permiten letras y mínimo cuatro carácteres"
                 regex={regularExpressions.nameAndLastName}
               />
             </div>
@@ -185,7 +195,7 @@ const Signup = () => {
             Lamentablemente no ha podido registrarse. Por favor intente más tarde
             </p>)}
             <div className='containerBtnSignup'>
-                <button type="submit">
+                <button type="submit" className='btnSignup'>
                 Crear cuenta
               </button>
               <p className='linkContainer'>

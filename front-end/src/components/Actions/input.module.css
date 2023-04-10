@@ -2,7 +2,13 @@
     display: flex;
     flex-direction: column;
     font-size: 12px;
-    height: 81px;
+    height: 80px;
+  }
+  .otherInputContainer{
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    height: 73px;
   }
   .useLabel {
     width: fit-content;
@@ -27,7 +33,7 @@
   }
   .otherInput{
     font-weight: bold;
-    width: 25vw;
+    width: 515px;
     padding: 0 18px;
     border: none;
     border-radius: 5px;
@@ -35,6 +41,9 @@
     margin-top: 3.5px;
     margin-left: 35px;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+  }
+  .input3{
+    width: 480px;
   }
    .iconVisibility {
     position: absolute;
@@ -64,14 +73,30 @@
   .inputError:focus {
     border: none;
   }
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
     .inputContainer {
       width: 346px;
+    }
+    .otherInput{
+      width: 250px;
+    }
+    .input3{
+      width: 200px;
     }
   }
   @media (max-width: 480px) {
     .inputContainer {
       width: 290px;
+    }
+    .otherInput{
+      width: 490px;
+      margin-right: 40px;
+    }
+    .otherInputContainer{
+      margin-top: 10px;
+    }
+    .input3{
+      width: 370px;
     }
   }
   

@@ -4,6 +4,8 @@ import './login.css';
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import { useGlobalStates } from "../../context/GlobalContext";
+import endpoint from '../../utils/endpoint.json';
+import Swal from "sweetalert2";
 
 const Login = () => {
 
@@ -18,7 +20,15 @@ const Login = () => {
   }
   const navigate=useNavigate();
 
-  
+  const mostrarAlerta = () => {
+    Swal.fire({
+        title:"EL USUARIO NO EXISTE",
+        text:"Por favor registrese antes de iniciar sesion",
+        icon:'error',
+        timer:'25000',
+        confirmButtonColor: "#F0572D"
+    })
+}
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,7 +38,7 @@ const Login = () => {
         email:email.value,
         password:password.value
       }
-      fetch("http://3.137.136.152:8080/api/v1/auth/authenticate", {
+      fetch(`${endpoint.url}/api/v1/auth/authenticate`, {
         method: "POST",
         body: JSON.stringify(obj),
         headers: {
@@ -43,9 +53,12 @@ const Login = () => {
                   last_name:res.last_name,
                   email:res.email,
                   token:res.token,
-                  valid:true})})
-        navigate('/')
+                  valid:true,
+                  roles:res.roles
+              })
+              navigate('/')})
         .catch((err) => {
+          mostrarAlerta()
           console.log(err);
           setError(true)
         })
@@ -94,7 +107,7 @@ const Login = () => {
             </p>)}
           <div className='containerBtnSignup'>
             
-              <button type="submit" >
+              <button type="submit"className="btnLogin" >
                 Ingresar
               </button> 
             <p className='linkContainer' style={{color:'black'}}>

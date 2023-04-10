@@ -1,0 +1,32 @@
+
+[{
+   "id=":"1",
+   "titulo":"Hoteles",
+   "descripcion":"hoteles",
+   "url":"https://media.revistagq.com/photos/5ca5f072501e5472ac7c591d/master/w_1600,c_limit/hotel_lujo_2934.jpg",
+   "cantidad":"230.503"
+
+},
+{
+    "id=":"2",
+    "titulo":"Hostels",
+    "descripcion":"hostels",
+    "url":"https://s3-eu-west-3.amazonaws.com/web-magazines/entornos/deployment/mine/wp-content/uploads/2018/06/22141224/fullmoonbudapest_life_mine.jpg",
+    "cantidad":"652.220"
+ },
+ {
+    "id=":"3",
+    "titulo":"Departamentos",
+    "descripcion":"departamentos",
+    "url":"https://sohogallery.cl/wp-content/uploads/2019/01/mejores-apartamentos-pisos-lujo-mundo-78.jpg",
+    "cantidad":"953.310"
+ },
+ {
+    "id=":"4",
+    "titulo":"Bed and Breakfast",
+    "descripcion":"B&Bs",
+    "url":"https://pix8.agoda.net/hotelImages/412094/-1/46cd7247fc2c442716644b97d77ac5db.jpg?ca=7&ce=1&s=1024x768",
+    "cantidad":"182.100"
+ }
+]
+
