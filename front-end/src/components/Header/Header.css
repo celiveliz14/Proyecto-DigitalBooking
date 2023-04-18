@@ -17,6 +17,9 @@
     align-items:center;
     justify-content:center;
 }
+.containerSideMenu{
+    display: none;
+}
 .header{
     position: sticky;
     top:0;
@@ -65,8 +68,11 @@
     .headerText{
         display: none;
     }
+    .header{
+        width: 92vw;
+    }
     .divContainer{
-        width: 100vw;
+        width: 96vw;
     }
     .svgHeader2{
         margin-left: 75px;
@@ -77,11 +83,19 @@
     .h4Header{
         width: 20vw;
     }
+    .verticalLine{
+        height: 4vh;
+        margin-left: 5px;
+    }
     
   }
   @media (max-width: 480px) {
     .containerHeader{
         margin-right: 0px;
+        display: none;
+    }
+    .containerSideMenu{
+        display: block;
     }
     .headerText{
         display: none;
@@ -91,7 +105,7 @@
     }
     .header{
         z-index: 10;
-        width: 150vw;
+        width: 150.5vw;
     }
     .h4Header{
         width: 30vw;

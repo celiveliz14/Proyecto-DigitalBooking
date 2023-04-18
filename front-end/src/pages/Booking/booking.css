@@ -4,6 +4,14 @@
 .containerBookingForm{
     padding: 30px 0px 0px 30px;
 }
+.containerProductBooking{
+    background-color: rgb(88, 88, 88);
+    color: white;
+    padding: 10px 28px 10px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .containerBookingFormDetails{
     display: flex;
 }
@@ -41,12 +49,14 @@
 }
 .containerBookingCalendar{
     margin: 30px 0px 0px 30px;
-    height: 50vh;
-    
+    height: 50vh;  
 }
 .bookingCalendar{
     height: 50vh;
     width: 61vw;
+}
+.mobileBookingCalendar{
+    display: none;
 }
 .containerBookingTime{
     margin: 40px 0px 0px 30px;
@@ -109,3 +119,81 @@
     transform: translateY(-3px);
     transform: scaleX(0.93) scaleY(0.93);
 }
+@media (max-width: 768px) {
+    .containerBooking{
+        width: 104vw;
+    }
+    .containerBookingFormDetails{
+        display: flex;
+        flex-direction: column;
+    }
+    .bookingForm{
+        width: 90vw;
+        height: 20vh;
+    }
+    .bookingInput{
+        width: 35vw;
+    }
+    .containerBookingCalendar{
+        height: 33vh;
+    }
+    .containerBookingTime{
+        height: 25vh;
+    }
+    .bookingTime{
+        width: 88.7vw;
+    }
+    .containerBookingTerms{
+        height: 43vh;
+    }
+    .backgBookingTerms{
+        height: 43vh;
+        width: 100vw;
+    }
+    .containerBookingDetails{
+        width: 92vw;
+        height: 95vh;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+  }
+  @media (max-width: 480px) {
+    .containerBooking{
+        width: 165vw;
+    }
+    .bookingCalendar{
+      display: none;
+    }
+    .containerBookingCalendar{
+        height: 45vh;
+    }
+    .mobileBookingCalendar{
+        height: 50vh;
+        width: 61vw;
+        display: block;
+    }
+    .bookingForm{
+        width: 145vw;
+        height: 25vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .bookingInput{
+        width: 130vw;
+    }
+    .bookingTime{
+        width: 143vw;
+    }
+    .containerBookingTerms,.backgBookingTerms{
+        width: 165vw;
+        height: 55vh;
+        margin-top: 30px;
+    }
+    .bookingTerms{
+        width: 153vw;
+    }
+    .containerBookingDetails{
+        width: 151vw;
+        height: 105vh;
+    }
+  }

@@ -23,15 +23,16 @@ export const ContextProvider = ({ children }) => {
   const [caracteristicas, setCaracteristicas] = useState([])
   const [atributos, setAtributos] = useState([])
   const [fechaInicio, setFechaInicio] = useState("")
-  const [fechaFinal, setFechaFinal] = useState("")
+  const [fechaFinal,setFechaFinal]=useState("")
 
   return (
     <ContextGlobal.Provider
     value={{data,setData,pressCategory,setPressCategory,category,setCategory,cities,setCities,
       pressBtn,setPressBtn,time,setTime,validateLogin,setValidateLogin,validateSvg,setValidateSvg
       ,cat,setCat,images,setImages,succes,setSucces, categorias,setCategorias, ciudades,setCiudades,
-      categoriaId, setCategoriaId, ciudadId, setCiudadId,caracteristicas,setCaracteristicas, atributos, setAtributos,
-      fechaInicio, setFechaInicio,fechaFinal, setFechaFinal }}
+      categoriaId, setCategoriaId, ciudadId, setCiudadId,caracteristicas,setCaracteristicas, atributos,
+       setAtributos,fechaInicio, setFechaInicio,fechaFinal,setFechaFinal,
+       }}
     >
       {children}
     </ContextGlobal.Provider>

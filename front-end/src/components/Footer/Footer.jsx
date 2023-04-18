@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className='footer'>
         <p className='pFooter'>©2023 Digital Booking</p>  
-        <Logos/>
+        <Logos menu={false}/>
     </footer>
   )
 }

@@ -10,8 +10,7 @@ import { useGlobalStates } from '../../context/GlobalContext'
 const Navbar = () => {
 
   const [ciudad, setCiudad] = useState([])
-  const [data,setData]=useState([])
-  const {pressBtn,setPressBtn, ciudades, setCiudades, setFechaInicio, setFechaFinal}=useGlobalStates()
+  const {pressBtn,setPressBtn, setCiudades, setFechaInicio, setFechaFinal}=useGlobalStates()
 
   useEffect(() =>  {
       loadCategorias()
@@ -29,9 +28,6 @@ const Navbar = () => {
     console.log(value);
     setFechaInicio(`${value[0]?.year}-${value[0]?.month?.number}-${value[0]?.day}`)
     setFechaFinal(`${value[1]?.year}-${value[1]?.month?.number}-${value[1]?.day}`)
-  }
-  function handleSubmit(e){
-    e.preventDefault()
   }
   function handleClick(e){
     e.preventDefault()
@@ -52,7 +48,7 @@ const Navbar = () => {
           minDate={new Date()}
           animations={[
             transition({ duration: 800, from: 35 })
-          ]} 
+          ]}
         />      
       <button className='buttonNavBar'onClick={handleClick}>Buscar</button>  
     </form>

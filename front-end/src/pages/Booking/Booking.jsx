@@ -11,12 +11,16 @@ import { useGlobalStates } from "../../context/GlobalContext";
 import timesInput from '../../utils/times.json';
 import endpoint from '../../utils/endpoint.json';
 import { useNavigate } from "react-router-dom";
+import DateObject from "react-date-object";
+import Swal from "sweetalert2";
 
 const Booking = () => {
   const [value, setValue] = useState([]);
   const [product,setProduct]=useState();
   const {time, data, succes, setSucces}=useGlobalStates();
   const [error,setError]=useState(false);
+  const [fecha,setFecha]=useState([])
+  const [dates,setDates]=useState([135,136,137,138,139,140,141,142,143,115,116,117,118,119])
   const weekDays = ["D", "L", "M", "M", "J", "V", "S"];
   const months = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre",];
   const navigate = useNavigate()
@@ -27,6 +31,8 @@ const Booking = () => {
     setValue(value);
   }
   function handleClick(){
+    // console.log(fecha)
+    // getFecha()
     const reserva = {
       fechaInicio:(`${value[0].year}-${value[0].month.number}-${value[0].day}`),
       fechaFinal:(`${value[1].year}-${value[1].month.number}-${value[1].day}`),
@@ -54,21 +60,47 @@ const Booking = () => {
       })
       .catch((err) => {
         console.log(err);
-        setError(true);
+        
       })
+    }else{
+      mostrarAlerta()
     }  
   }
+  const mostrarAlerta = () => {
+    Swal.fire({
+        title:"FECHAS VACIAS",
+        text:"Falta seleccionar las fechas",
+        icon:'warning',
+        timer:'25000',
+        confirmButtonColor: "#F0572D"
+    })
+}
   useEffect(() => {
     axios.get(`${endpoint.url}/productos/${id}`)
     .then(res=> setProduct(res.data))
   }, [])
+  useEffect(()=>{
+    axios.get(`${endpoint.url}/reservas/producto/${id}`)
+    .then(res=> {setFecha(res.data)})
+  },[])
+  function getFecha(){
+    let fechaInicio = new Date(fecha[0].fechaInicio);
+    let fechaFin  = new Date(fecha[0].fechaFinal);
+  //   while(fechaFin.getTime() >= fechaInicio.getTime()){
+  //     fechaInicio.setDate(fechaInicio.getDate() + 1);
+  //     const hola =fechaInicio.getFullYear() + '/' + (fechaInicio.getMonth() + 1) + '/' + fechaInicio.getDate();
+  //     let fi=new DateObject(hola)
+  //     setDates([... dates , fi.dayOfYear])
+  // }
+    
+  }
   return (
     <>
       <Header onChange={"home"} />
       <div className="containerBooking">
-        <div className="containerProductName">
+        <div className="containerProductBooking">
           <div style={{ width: "100vw" }}>
-            <p>{product?.categoria.titulo}</p>
+            <p>{product?.categoria?.titulo}</p>
             <h1>{product?.titulo}</h1>
           </div>
           <Link to={"/"}>
@@ -119,6 +151,37 @@ const Booking = () => {
                   disableMonthPicker
                   disableYearPicker
                   minDate={new Date()}
+                  mapDays={({ date }) => {
+                    let isWeekend = dates.includes(date.dayOfYear)
+                    // console.log(date)
+                    if (isWeekend) return {
+                      disabled: true,
+                      style: { color: "#ccc" },
+                      onClick: () => alert("weekends are disabled")
+                    }
+                  }}
+                />
+              </div>
+              <div className="mobileBookingCalendar">
+              <Calendar
+                  value={value}
+                  onChange={handleChange}
+                  weekDays={weekDays}
+                  months={months}
+                  numberOfMonths={1}
+                  range
+                  disableMonthPicker
+                  disableYearPicker
+                  minDate={new Date()}
+                  mapDays={({ date }) => {
+                    let isWeekend = dates.includes(date.dayOfYear)
+                    // console.log(date)
+                    if (isWeekend) return {
+                      disabled: true,
+                      style: { color: "#ccc" },
+                      onClick: () => alert("La fecha no esta disponible")
+                    }
+                  }}
                 />
               </div>
             </div>
@@ -173,7 +236,7 @@ const Booking = () => {
             <h2 style={{textAlign:'center',margin:'20px'}}>Detalle de la reserva</h2>
             <img className="imgBookingDetails" src={product?.listImagen[0].url} alt="" />
             <div className="bookingDetails">
-              <p style={{color:'gray',fontSize:'14px',fontWeight:'bold',marginLeft:'0.6px'}}>HOTEL</p>
+              <p style={{color:'gray',fontSize:'14px',fontWeight:'bold',marginLeft:'0.6px'}}>{product?.categoria?.titulo}</p>
               <h2 style={{marginTop:'-6px'}}>{product?.titulo}</h2>
               <Stars/>
               <p style={{color:'black',display:'flex',marginTop:'20px',fontWeight:'bold',fontSize:'14px'}}>

@@ -14,7 +14,7 @@ const CardBloqueCategorias = ({categoria}) => {
         <div className='cardCategoria' onClick={handleClick}>
             <img className='imagenCategoria' src={categoria.urlImagen} />
             <h2 style={{ fontSize: "20px", margin: 0, color: "#31363F" }}>{categoria.titulo}</h2>
-            <p style={{ fontSize: "14px", margin: 0, color: "#383B58" }}>3 {categoria.titulo}</p>
+            <p style={{ fontSize: "14px", margin: 0, color: "#383B58" }}>{categoria.descripcion}</p>
         </div>
     )
 }

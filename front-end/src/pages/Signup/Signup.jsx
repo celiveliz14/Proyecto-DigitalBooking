@@ -44,6 +44,7 @@ const Signup = () => {
             }})
             .then((response) =>  response.text())
             .then((res) => {
+              console.log(res)
               mostrarAlerta() 
             })
             .catch((err) => {

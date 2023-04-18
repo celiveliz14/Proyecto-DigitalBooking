@@ -5,6 +5,18 @@
     height: 2vh;
     margin-right: 30px;
 }
+.containerLogosMenu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 2vh;
+    margin-right: 30px;
+}
+.logoSideMenu{
+    width: 40px;
+    height: 40px;
+}
 @media (max-width: 768px) {
     .containerLogos{
         width: 20vw;

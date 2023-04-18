@@ -85,9 +85,9 @@
   }
   @media (max-width: 480px) {
     .swiper {
-      width: 165vw;
+      width: 164.5vw;
     }
     .swiper-slide img {
-      width: 165vw;
+      width: 164.5vw;
     }
   }

@@ -46,6 +46,9 @@
     border-radius: 10px;
     padding: 10px;
 }
+.justifyWord{
+    overflow-wrap: anywhere;
+}
 .divImagesDetails{
     display: flex;
     align-items: center;
@@ -197,7 +200,7 @@ hr{
 }
 @media (max-width: 768px) {
     .containerProductName{
-        width: 96vw;
+        width: 93vw;
     }
     .flechaProduct{
         width: 8vw;
@@ -229,6 +232,7 @@ hr{
         margin: 30px 0px 0px 20px;
         justify-items:space-between;
         height: 40vh;
+        width: 96.5vw;
     }
     .productTerms{
         width: 47vw;
@@ -270,9 +274,14 @@ hr{
      .stars{
         width: 3vw;
      }
-     
+     .containerProductName{
+        width: 151vw;
+     }
      .containerProductDetails{
         width: 165vw;
+     }
+     .divProductDetails{
+        width: 151.5vw;
      }
      .productDescription{
         width: 150vw;
@@ -281,7 +290,7 @@ hr{
      }
      .containerProductTerms{
         display:flex ;
-        height: 40vh;
+        height: 35vh;
         width: 152vw;
      }
      .productTerms{

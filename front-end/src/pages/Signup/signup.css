@@ -81,5 +81,16 @@
       margin-top: 20px; /* 55px*/
     }
   }
+  @media (max-width: 768px) {
+    .containerForm{
+      height: 82vh;
+    }
+  }
+  @media (max-width: 480px) {
+    .containerForm{
+      width: 162vw;
+      height: 146vh;
+    }
+  }
   
   

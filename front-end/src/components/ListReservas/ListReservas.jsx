@@ -12,25 +12,20 @@ const ListReservas = () => {
     const { data } = useGlobalStates()
     const [reservas, setReservas] = useState([])
     const [vacio, setVacio] = useState("")
-
+    const [cardSize,setCardSize]=useState()
 
     const loadReservas = async () => {
         const r = await axios.get(`${endpoint.url}/reservas/user/${data.id}`)
         .then((data) => {
             setReservas(data.data)
-            console.log(data.data);
-            console.log(reservas);
         })
         .catch((err) => {
           setVacio("VACIA")
         })
     }
-
     useEffect(() => {
         loadReservas()
       }, [])
-
-    
 
     const mostrarAlerta = () => {
         Swal.fire({
@@ -45,12 +40,12 @@ const ListReservas = () => {
   return (
     <>
     <Header onChange={"home"} />
-    <div>
     <h1 className='centro'>Mis reservas</h1>
-        <div className='container2'>
-        {reservas?.map((r)=> <CardReservas key={r.id} titulo={r.producto.titulo} fechaInicio={r.fechaInicio} fechaFinal={r.fechaFinal} imagen={r.producto.listImagen[0].url}/>)}
+    <div className='containerListReservas'> 
+      <div className='containerReservas'>
+        {reservas?.map((r)=> <CardReservas key={r.id} producto={r.producto} fechaInicio={r.fechaInicio} fechaFinal={r.fechaFinal}/>)}
         {vacio === "VACIA" ? mostrarAlerta() : ""}
-        </div>
+      </div>
     </div>
     </>
   )

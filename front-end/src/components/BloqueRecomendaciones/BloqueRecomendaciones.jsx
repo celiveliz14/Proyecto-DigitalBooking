@@ -24,10 +24,11 @@ const BloqueRecomendaciones = () => {
   },[pressCategory])
 
   useEffect(()=>{
-    if(cities !== null){
-      // const data = axios.get(`${endpoint.url}/productos/dateCiudad?fechaInicio=${fechaInicio}&fechaFinal=${fechaFinal}&ciudadId=${cities.id}`)
-      // .then(data => setFilterRecomend(data.data))
-      // console.log(data);
+    if(cities !== null ){
+      if(fechaInicio && fechaFinal){
+        const data = axios.get(`${endpoint.url}/productos/dateCiudad?fechaInicio=${fechaInicio}&fechaFinal=${fechaFinal}&ciudadId=${cities.id}`)
+        .then(data => setFilterRecomendation(data.data))
+      } 
       setFilterRecomendation(recomendacion.filter((rec)=>rec.ciudad.nombre_ciudad==cities.nombre_ciudad))
     }
     setValid(true)

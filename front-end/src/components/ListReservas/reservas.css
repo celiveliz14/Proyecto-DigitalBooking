@@ -1,21 +1,99 @@
 .centro{
     text-align: center;
 }
-.container2{
-    gap: 5px;
-    display: grid;
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(
-            150px,
-            1fr
-        )
-    )
-
+.bloqueReservas{
+  width: 48vw;
+  display: flex;
+  justify-self: center;
+  margin-top: 20px;
+  gap: 30px;
+  border-radius: 7px;
+  box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.251);
+}
+.imagenReservas{
+   height: 100%;
+   width: 420px;
+   object-fit: cover;
+   border-radius: 7px;
+}
+.categoriaSpan{
+   color: #191b1d;
+}
+.tituloSpan{
+   color: #191b1d;
+   font-weight: 700;
+}
+.ubicacionP{
+   color: #000;
+   font-size: 16px;
+   font-weight: 400;
+}
+.divCardReservas{
+   display: flex;
+   justify-content: space-around;
+   flex-direction: column;
+   width: 30vw;
+}
+.containerListReservas{
+  margin: 1vw;
+}
+.containerReservas{
+  width: 48vw;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  justify-self: center;
+  margin-top: 20px;
+  gap: 10px;
+  border-radius: 7px;
+}
+.bookingCardCheck{
+  display: flex;
+  justify-content: space-around;
+  font-weight: bold;
+  margin-right: 20px;
 }
 
 @media (min-width: 768px) {
-  .botonVacio {
-    padding: 24px;
+  .containerListReservas{
+    height: 800px;
+  }
+  .bloqueReservas{
+    height: 20vh;
+  }
+  .imagenReservas{
+    width: 180px;
+  }
+  .tituloSpan{
+    font-size: 20px;
+  }
+  .bookingCardCheck{
+    justify-content: space-between;
+  }
+  .pCardCheck{
+    font-size: 13px;
+  }
+}
+@media (max-width: 480px) {
+  .containerReservas{
+    display: flex;
+    flex-direction: column;
+    height: 138vh ;
+  }
+  .centro{
+    text-align: end;
+    margin-left: 10vw;
+  }
+  .bloqueReservas{
+    width: 150vw;
+  }
+  .imagenReservas{
+    width: 320px;
+  }
+  .divCardReservas{
+    width: 50vw;
+  }
+  .containerListReservas{
+    width: 164px;
+    margin-left: 7vw;
   }
 }

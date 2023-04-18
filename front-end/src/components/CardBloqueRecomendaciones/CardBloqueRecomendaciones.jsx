@@ -15,7 +15,7 @@ const CardBloqueRecomendaciones = ({ recomendacion }) => {
                     <p className='ubicacionP'>{recomendacion.ciudad.nombre_ciudad}</p>
                     <div>
                         <span><img style={{height:"30px",width:"30px"}} src={recomendacion.caracteristicas[0].icono}></img>
-                        <img style={{height:"30px",width:"30px"}} src={recomendacion.caracteristicas[1].icono}></img></span>
+                        <img style={{height:"30px",width:"30px",marginLeft:'10px'}} src={recomendacion.caracteristicas[1].icono}></img></span>
                     </div>
                 </div>
                 <p className='ubicacionP'>{recomendacion.tituloDescripcion}</p>
